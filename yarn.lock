@@ -967,6 +967,11 @@
   resolved "https://registry.npmjs.org/@types/seamless-immutable/-/seamless-immutable-7.1.16.tgz#f593ea86da53d66d74c87c2cc4ff8bd71dd066d5"
   integrity sha512-aoi1L9llrDtviLpv+2VoYM9OgAAsoDtHL8uw4mokuNXl0qwRoen/t4aSAZpoTJVQ2DIdhZQ55L0R0duwz19WEw==
 
+"@types/spotify-node-applescript@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.npmjs.org/@types/spotify-node-applescript/-/spotify-node-applescript-1.1.0.tgz#9d047c2e5cd943dd4419b98e91aba756de59ea98"
+  integrity sha512-YI1H1dPTj633IJy+7l9dR+ihKQkzrgShTh+UyUO9t5hgIGKSPrP3L4z1OJvIVtim9TafAD85SWvG0rbqr5Kqkw==
+
 "@types/styled-jsx@2.2.9":
   version "2.2.9"
   resolved "https://registry.npmjs.org/@types/styled-jsx/-/styled-jsx-2.2.9.tgz#e50b3f868c055bcbf9bc353eca6c10fdad32a53f"
@@ -1452,6 +1457,11 @@ app-builder-lib@22.11.7:
     sanitize-filename "^1.6.3"
     semver "^7.3.5"
     temp-file "^3.4.0"
+
+applescript@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/applescript/-/applescript-1.0.0.tgz#bb87af568cad034a4e48c4bdaf6067a3a2701317"
+  integrity sha1-u4evVoytA0pOSMS9r2Bno6JwExc=
 
 aproba@^1.0.3:
   version "1.2.0"
@@ -7369,6 +7379,13 @@ split@^1.0.1:
   integrity sha512-mTyOoPbrivtXnwnIxZRFYRrPNtEFKlpB2fvjSnCQUiAA6qAZzqwna5envK4uk6OIeP17CsdF3rSBGYVBsU0Tkg==
   dependencies:
     through "2"
+
+spotify-node-applescript@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.npmjs.org/spotify-node-applescript/-/spotify-node-applescript-1.1.1.tgz#f64ac713a807cd2b9333452abc38b0ca89287b03"
+  integrity sha512-6sjOczwm2N+yOyZbLSoE/fZsWdyOUI9wOT0/GiTrmq+aGrtPIuxlqeCGeZzrYK0qHUO08vQXpleeId6hQjsgig==
+  dependencies:
+    applescript "1.0.0"
 
 sprintf-js@^1.1.2:
   version "1.1.2"

@@ -149,9 +149,9 @@ export default class Header extends React.PureComponent<HeaderProps> {
         <style jsx>{`
           .header_header {
             position: fixed;
-            top: 1px;
-            left: 1px;
-            right: 1px;
+            top: 0px;
+            left: 0px;
+            right: 0px;
             z-index: 100;
           }
 

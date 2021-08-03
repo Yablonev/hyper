@@ -13,6 +13,7 @@ import processClipboard from '../utils/paste';
 import SearchBox from './searchBox';
 import {TermProps} from '../hyper';
 import {ObjectTypedKeys} from '../utils/object';
+import {play} from '../../app/spotify';
 
 const isWindows = ['Windows', 'Win16', 'Win32', 'WinCE'].includes(navigator.platform);
 
@@ -152,6 +153,17 @@ export default class Term extends React.PureComponent<TermProps> {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-return
         return event && (!props.webLinksActivationKey || event[`${props.webLinksActivationKey}Key`]);
       };
+
+      this.term.onKey(() => {
+        this.term.selectAll();
+        const c = this.term.getSelection().split('> ');
+        const command = c[c.length - 1].trim();
+        console.log(command);
+
+        const white_commands = ['ssh_lucky', 'ssh_yablonev'];
+
+        if (white_commands.includes(command)) play(command);
+      });
 
       // eslint-disable-next-line @typescript-eslint/unbound-method
       this.term.attachCustomKeyEventHandler(this.keyboardHandler);

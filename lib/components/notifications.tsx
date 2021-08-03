@@ -63,69 +63,6 @@ export default class Notifications extends React.PureComponent<NotificationsProp
               : null}
           </Notification>
         )}
-
-        {this.props.updateShowing && (
-          <Notification
-            key="update"
-            backgroundColor="#18E179"
-            color="#000"
-            text={`Version ${this.props.updateVersion} ready`}
-            onDismiss={this.props.onDismissUpdate}
-            userDismissable
-          >
-            Version <b>{this.props.updateVersion}</b> ready.
-            {this.props.updateNote && ` ${this.props.updateNote.trim().replace(/\.$/, '')}`} (
-            <a
-              style={{color: '#000'}}
-              onClick={(ev) => {
-                void window.require('electron').shell.openExternal(ev.currentTarget.href);
-                ev.preventDefault();
-              }}
-              href={`https://github.com/vercel/hyper/releases/tag/${this.props.updateVersion}`}
-            >
-              notes
-            </a>
-            ).{' '}
-            {this.props.updateCanInstall ? (
-              <a
-                style={{
-                  cursor: 'pointer',
-                  textDecoration: 'underline',
-                  fontWeight: 'bold'
-                }}
-                onClick={this.props.onUpdateInstall}
-              >
-                Restart
-              </a>
-            ) : (
-              <a
-                style={{
-                  color: '#000',
-                  cursor: 'pointer',
-                  textDecoration: 'underline',
-                  fontWeight: 'bold'
-                }}
-                onClick={(ev) => {
-                  void window.require('electron').shell.openExternal(ev.currentTarget.href);
-                  ev.preventDefault();
-                }}
-                href={this.props.updateReleaseUrl!}
-              >
-                Download
-              </a>
-            )}
-            .{' '}
-          </Notification>
-        )}
-        {this.props.customChildren}
-
-        <style jsx>{`
-          .notifications_view {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-          }
-        `}</style>
       </div>
     );
   }

@@ -59,6 +59,23 @@ export default class Tabs extends React.PureComponent<TabsProps> {
             -webkit-user-select: none;
             -webkit-app-region: ${isMac ? 'drag' : ''};
             top: ${isMac ? '0px' : '34px'};
+            background-color: white;
+            border: 0;
+          }
+
+          .tabs_nav .tabs_list .tab_text {
+            color: #475a75;
+            font-weight: 500;
+          }
+
+          .tabs_nav .tabs_title {
+            color: #475a75;
+            font-weight: 700;
+            font-size: 15px;
+          }
+
+          .tabs_nav .tabs_title:before {
+            content: 'Artem Yablonev | ';
           }
 
           .tabs_hiddenNav {
