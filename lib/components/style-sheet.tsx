@@ -14,6 +14,7 @@ export default class StyleSheet extends React.PureComponent<StyleSheetProps> {
           user-select: none;
           -ms-user-select: none;
           -webkit-user-select: none;
+          padding-bottom: 10px;
         }
 
         .xterm.focus,

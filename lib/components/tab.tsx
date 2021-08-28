@@ -54,35 +54,24 @@ export default class Tab extends React.PureComponent<TabProps> {
 
         <style jsx>{`
           .tab_tab {
-            color: #ccc;
-            border-color: #ccc;
-            border-bottom-width: 1px;
-            border-bottom-style: solid;
-            border-left-width: 1px;
-            border-left-style: solid;
+            box-shadow: -1px 0px 0px 0px #475a7538;
             list-style-type: none;
             flex-grow: 1;
             position: relative;
           }
 
-          .tab_tab:hover {
-            color: #ccc;
-          }
-
           .tab_first {
-            border-left-width: 0;
-            padding-left: 1px;
+
           }
 
           .tab_firstActive {
-            border-left-width: 1px;
             padding-left: 0;
           }
 
           .tab_active {
             color: #fff;
-            border-bottom-width: 0;
           }
+
           .tab_active:hover {
             color: #fff;
           }
@@ -104,6 +93,10 @@ export default class Tab extends React.PureComponent<TabProps> {
             overflow: hidden;
           }
 
+          .tab_active .tab_textInner {
+            color: #475a75;
+          }
+
           .tab_textInner {
             position: absolute;
             left: 24px;
@@ -114,6 +107,52 @@ export default class Tab extends React.PureComponent<TabProps> {
             text-overflow: ellipsis;
             white-space: nowrap;
             overflow: hidden;
+            color: #333;
+            font-weight: 700;
+          }
+
+          .tab_active .tab_textInner[title="Yablonev IMac"]:after {
+            background-image: url(../assets/imac_active.svg);
+          }
+
+          .tab_textInner[title="Yablonev IMac"]:after {
+            content: '';
+            background-image: url(../assets/imac.svg);
+            margin-left: 3px;
+            width: 14px;
+            height: 14px;
+            background-size: cover;
+            z-index: 10;
+            position: absolute;
+            margin-top: 8px;
+          }
+
+          .tab_textInner[title="Yablonev Box"]:after {
+            content: '';
+            background-image: url(../assets/ssh.svg);
+            margin-left: 6px;
+            width: 14px;
+            height: 14px;
+            background-size: cover;
+            z-index: 10;
+            position: absolute;
+            margin-top: 10px;
+          }
+
+          .tab_active .tab_textInner[title="Lucky Box"]:after, .tab_active .tab_textInner[title="Yablonev Box"]:after {
+            background-image: url(../assets/ssh_active.svg);
+          }
+
+          .tab_textInner[title="Lucky Box"]:after {
+            content: '';
+            background-image: url(../assets/ssh.svg);
+            margin-left: 6px;
+            width: 14px;
+            height: 14px;
+            background-size: cover;
+            z-index: 10;
+            position: absolute;
+            margin-top: 10px;
           }
 
           .tab_icon {

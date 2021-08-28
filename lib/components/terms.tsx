@@ -136,9 +136,7 @@ export default class Terms extends React.Component<TermsProps> {
 
         <style jsx>{`
           .terms_terms {
-            background-image: url(https://sun9-44.userapi.com/c848620/v848620007/e1500/Mz8uoenRq2g.jpg);
             background-image: url(https://sun9-26.userapi.com/impf/c840320/v840320544/f919/1iECDkyHOWg.jpg?size=2560x1294&quality=96&sign=a1d482a2ff93727a03657ea26d58783a&type=album);
-            background-image: url(https://sun9-53.userapi.com/impf/ideqW7kBuK7fyisKI4MbQiOz3ISPdPCTMC3BcQ/Ug6GziyQlX0.jpg?size=1500x1125&quality=96&sign=c0a1f6f6c54c77052957722ffa31b893&type=album);
             background-size: cover;
             background-attachment: fixed;
             width: 100%;
@@ -192,9 +190,9 @@ export default class Terms extends React.Component<TermsProps> {
           .terms_termGroup {
             display: block;
             width: 100%;
-            height: 100%;
             position: absolute;
             top: 0;
+            bottom: 10px;
             left: -9999em; /* Offscreen to pause xterm rendering, thanks to IntersectionObserver */
           }
 

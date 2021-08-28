@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {decorate, getTabProps} from '../utils/plugins';
+import {customStuff} from '../../app/custom/index';
 
 import Tab_ from './tab';
 import {TabsProps} from '../hyper';
@@ -13,6 +14,26 @@ export default class Tabs extends React.PureComponent<TabsProps> {
     const {tabs = [], borderColor, onChange, onClose, fullScreen} = this.props;
 
     const hide = !isMac && tabs.length === 1;
+
+    tabs.map((tab) => {
+      if (!tab) return tab
+      if (tab.title === 'yablonev@iMac-Artem:~') {
+        tab.title = 'Yablonev IMac';
+        if(tab.isActive) customStuff('yablonev_imac');
+      }
+
+      if (tab.title === 'yablonev@box-48473: ~') {
+        tab.title = 'Yablonev Box';
+        if(tab.isActive) customStuff('ssh_yablonev');
+      }
+
+      if (tab.title === 'yablonev@box-100343: ~') {
+        tab.title = 'Lucky Box';
+        if(tab.isActive) customStuff('ssh_lucky');
+      }
+
+      return tab
+    })
 
     return (
       <nav className={`tabs_nav ${hide ? 'tabs_hiddenNav' : ''}`}>
@@ -35,14 +56,7 @@ export default class Tabs extends React.PureComponent<TabsProps> {
                   });
                   return <Tab key={`tab-${uid}`} {...props} />;
                 })}
-              </ul>,
-              isMac && (
-                <div
-                  key="shim"
-                  style={{borderColor}}
-                  className={`tabs_borderShim ${fullScreen ? 'tabs_borderShimUndo' : ''}`}
-                />
-              )
+              </ul>
             ]
           : null}
         {this.props.customChildren}
@@ -101,19 +115,6 @@ export default class Tabs extends React.PureComponent<TabsProps> {
 
           .tabs_fullScreen {
             margin-left: -1px;
-          }
-
-          .tabs_borderShim {
-            position: absolute;
-            width: 76px;
-            bottom: 0;
-            border-color: #ccc;
-            border-bottom-style: solid;
-            border-bottom-width: 1px;
-          }
-
-          .tabs_borderShimUndo {
-            border-bottom-width: 0px;
           }
         `}</style>
       </nav>
