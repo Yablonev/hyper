@@ -7,8 +7,7 @@
     "app": "cross-env ELECTRONMON_LOGLEVEL=error electronmon target",
     "dev": "concurrently -n \"Webpack,TypeScript\" -c \"cyan.bold,blue.bold\" \"webpack -w\" \"tsc --build -v --pretty --watch --preserveWatchOutput\" -k",
     "build": "cross-env NODE_ENV=production webpack && tsc -b -v",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "test": "yarn run lint && yarn run test:unit",
+    "test": "yarn run test:unit",
     "test:unit": "ava",
     "test:unit:watch": "yarn run test:unit -- --watch",
     "test:spectron": "ava --config ava-spectron.config.js",
@@ -18,10 +17,7 @@
     "clean": "node ./bin/rimraf-standalone.js node_modules && node ./bin/rimraf-standalone.js ./app/node_modules && node ./bin/rimraf-standalone.js ./app/renderer"
   },
   "license": "MIT",
-  "author": {
-    "name": "ZEIT, Inc.",
-    "email": "team@zeit.co"
-  },
+  "author": "Yablonev",
   "dependencies": {
     "args": "5.0.1",
     "chalk": "4.1.1",
@@ -103,11 +99,6 @@
     "electron-devtools-installer": "3.2.0",
     "electron-rebuild": "2.3.5",
     "electronmon": "^2.0.1",
-    "eslint": "7.31.0",
-    "eslint-config-prettier": "8.3.0",
-    "eslint-plugin-eslint-comments": "^3.2.0",
-    "eslint-plugin-prettier": "3.4.0",
-    "eslint-plugin-react": "7.24.0",
     "husky": "7.0.1",
     "inquirer": "8.1.2",
     "node-addon-api": "4.0.0",
