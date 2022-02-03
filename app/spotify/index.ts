@@ -5,11 +5,10 @@ const songs: any = {
   ssh_yablonev: '7cS3YBMzNm4OX6NQT8YvF6'
 };
 
-// eslint-disable
 export function play(command: any) {
-  spotify.setVolume(100);
-  spotify.pause();
-  setTimeout(() => {
-    spotify.playTrack(`spotify:track:${songs[command]}`);
-  }, 1000);
+  // spotify.setVolume(100);
+  // spotify.pause();
+  // setTimeout(() => {
+  //   spotify.playTrack(`spotify:track:${songs[command]}`);
+  // }, 1000);
 }
