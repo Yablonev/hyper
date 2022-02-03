@@ -19,20 +19,17 @@ export default class Tabs extends React.PureComponent<TabsProps> {
       if (!tab) return tab;
       if (tab.title === 'yablonev@iMac-Artem:~') {
         tab.title = 'Yablonev IMac';
-        if(tab.isActive)
-          customStuff('yablonev_imac');
+        if(tab.isActive)  customStuff('yablonev_imac');
       }
 
       if (tab.title === 'yablonev@box-48473: ~') {
         tab.title = 'Yablonev Box';
-        if(tab.isActive)
-          customStuff('ssh_yablonev');
+        if(tab.isActive)  customStuff('ssh_yablonev');
       }
 
       if (tab.title === 'yablonev@box-100343: ~') {
         tab.title = 'Lucky Box';
-        if(tab.isActive)
-          customStuff('ssh_lucky');
+        if(tab.isActive)  customStuff('ssh_lucky');
       }
 
       return tab;
